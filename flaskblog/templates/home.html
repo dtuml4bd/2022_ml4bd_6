@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">   
+    {% for post in posts %}    
+    <a class="card-link" style="color:red;" href="{{ url_for('predict') }}">
+            
+   
+    <div class="col-sm-6 col-lg-4 card-container">
+
+
+        <div class="card" style="width: 14rem;">            
+            <img class="card-img-top" src="{{post.author}}">
+            <div class="card-body">
+              <h5 class="card-title">{{post.date_posted}}</h5>
+              <p class="card-text">{{post.title}}</p>
+              <a href="#" class="btn-buynow">{{ post.content }}</a>
+            </div>
+        </div>
+    </div>
+</a>
+    {% endfor %}
+    </div>
+{% endblock content %}
